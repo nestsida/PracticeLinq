@@ -16,11 +16,15 @@ namespace PracticeLinq
                 videoGames.Add("The bear went over the mountain");
                 videoGames.Add("She dances in the rain");
                 videoGames.Add("no need for games");
-                videoGames.Add("");
+               
             };
-            videoGames.Where(videoGames => videoGames.Contains(""));
-            Console.WriteLine("List all the video games: {videoGames}");
+            
+            List<string> list = videoGames.OrderBy(name =>name.Length).ToList();
+            
+            videoGames.ForEach(name => Console.WriteLine(name));
             Console.WriteLine("This video game has a long name.");
+
+         
         }
     }
 }
